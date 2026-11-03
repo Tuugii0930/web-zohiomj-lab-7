@@ -1,0 +1,23 @@
+// Хамгийн сүүлд импортлоно
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .photo-card:hover,
+  .photo-card:focus-visible,
+  .photo-card:hover .photo-card__img,
+  .photo-card:focus-visible .photo-card__img {
+    transform: none;
+  }
+  .flip-card:hover .flip-card__inner {
+    transform: none;
+  }
+  .flip-card.flip-card--flipped .flip-card__inner {
+    transform: rotateY(180deg);
+  }
+}

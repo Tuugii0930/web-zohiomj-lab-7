@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+.media {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: var(--radius-md);
+  display: block;
+  margin-block: 1rem;
+
+  &--map {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+.icon {
+  width: rem(64px);
+  height: rem(64px);
+  color: var(--accent);
+  transition: transform var(--dur);
+
+  &:hover {
+    transform: rotate(-8deg) scale(1.15);
+  }
+}

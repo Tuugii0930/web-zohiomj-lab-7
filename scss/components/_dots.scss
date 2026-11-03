@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+.dots {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  padding: 2rem 0 0;
+  margin: 0;
+
+  &__dot {
+    width: rem(20px);
+    height: rem(20px);
+    border-radius: 50%;
+    background: var(--accent);
+    animation: bounce 1s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 120ms);
+  }
+}

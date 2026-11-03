@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Зургийн цомог — Лаб 6</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Зургийн цомог</h1>
+    <button class="btn" id="theme-toggle" type="button" aria-pressed="false">Dark горим</button>
+  </header>
+
+  <main class="page">
+    <!-- Даалгавар 1: hover/focus transition + transform -->
+    <section aria-labelledby="h-gallery">
+      <h2 id="h-gallery">Галерей</h2>
+      <ul class="gallery">
+        <li class="gallery__item" style="--i:0"><a href="#" class="photo-card"><img class="photo-card__img" src="img/photo1.jpg" alt="Үүлэн дор сунаж тогтсон уулс ба тал" loading="lazy"><span class="photo-card__cap">Говийн уул</span></a></li>
+        <li class="gallery__item" style="--i:1"><a href="#" class="photo-card"><img class="photo-card__img" src="img/photo2.jpg" alt="Цасан оройтой уулын өвөрт гэр, мал бэлчиж буй нутаг" loading="lazy"><span class="photo-card__cap">Малчны нутаг</span></a></li>
+        <li class="gallery__item" style="--i:2"><a href="#" class="photo-card"><img class="photo-card__img" src="img/photo3.jpg" alt="Өвс, чулууны цаана цасан оройт уулс" loading="lazy"><span class="photo-card__cap">Алтайн нуруу</span></a></li>
+        <li class="gallery__item" style="--i:3"><a href="#" class="photo-card"><img class="photo-card__img" src="img/photo4.jpg" alt="Гол мөрөнтэй толгодот тал, бэлчиж буй мал" loading="lazy"><span class="photo-card__cap">Голын хөндий</span></a></li>
+        <li class="gallery__item" style="--i:4"><a href="#" class="photo-card"><img class="photo-card__img" src="img/photo5.jpg" alt="Нугалж урсах гол бүхий ногоон тал" loading="lazy"><span class="photo-card__cap">Эргэлт гол</span></a></li>
+        <li class="gallery__item" style="--i:5"><a href="#" class="photo-card"><img class="photo-card__img" src="img/photo6.jpg" alt="Нуурын цаана шинэс ойн дээгүүр цасан орой" loading="lazy"><span class="photo-card__cap">Тайга</span></a></li>
+      </ul>
+    </section>
+
+    <!-- Даалгавар 2: 3D flip card -->
+    <section aria-labelledby="h-flip">
+      <h2 id="h-flip">3D flip карт</h2>
+      <div class="flip-card" id="flip">
+        <div class="flip-card__inner">
+          <div class="flip-card__face flip-card__face--front"><img class="flip-card__img" src="img/photo1.jpg" alt="Зургийн урд тал"></div>
+          <div class="flip-card__face flip-card__face--back">
+            <h3>Зургийн мэдээлэл</h3>
+            <p>Нэр: Өглөө<br>Хэмжээ: 800×600<br>Огноо: 2026-11-04</p>
+          </div>
+        </div>
+      </div>
+      <button class="btn" id="flip-btn" type="button" aria-pressed="false" aria-controls="flip">Эргүүлэх</button>
+    </section>
+
+    <!-- Даалгавар 3: @keyframes + stagger -->
+    <section aria-labelledby="h-anim">
+      <h2 id="h-anim">Stagger animation</h2>
+      <ul class="dots" aria-hidden="true">
+        <li class="dots__dot" style="--i:0"></li><li class="dots__dot" style="--i:1"></li><li class="dots__dot" style="--i:2"></li>
+        <li class="dots__dot" style="--i:3"></li><li class="dots__dot" style="--i:4"></li><li class="dots__dot" style="--i:5"></li>
+      </ul>
+    </section>
+
+    <!-- Даалгавар 5: multimedia -->
+    <section aria-labelledby="h-media">
+      <h2 id="h-media">Видео, SVG, iframe</h2>
+      <figure>
+        <video class="media" controls preload="metadata" poster="img/photo1.jpg" width="640">
+          <source src="video/clip.webm" type="video/webm">
+          <source src="video/clip.mp4" type="video/mp4">
+          <track kind="subtitles" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+          Таны хөтөч видео тоглуулахгүй байна.
+        </video>
+        <figcaption>Танилцуулга видео (монгол хадмалтай)</figcaption>
+      </figure>
+
+      <svg class="icon" viewBox="0 0 64 64" role="img" aria-labelledby="svg-t">
+        <title id="svg-t">Камерын дүрс</title>
+        <rect x="6" y="18" width="52" height="34" rx="6" fill="none" stroke="currentColor" stroke-width="4"/>
+        <circle cx="32" cy="35" r="10" fill="none" stroke="currentColor" stroke-width="4"/>
+        <path d="M22 18l4-8h12l4 8" fill="none" stroke="currentColor" stroke-width="4"/>
+      </svg>
+
+      <iframe class="media media--map" title="Улаанбаатар хотын газрын зураг"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=106.8,47.88,107.0,47.95"
+        loading="lazy" sandbox="allow-scripts allow-same-origin"
+        referrerpolicy="no-referrer" width="640" height="320"></iframe>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 var(--gap) 3rem;
+  font: 1rem/1.6 system-ui, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--dur), color var(--dur);
+}
+
+h2 {
+  margin-top: 2.5rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}

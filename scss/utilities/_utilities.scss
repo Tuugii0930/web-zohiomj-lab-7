@@ -1,0 +1,26 @@
+@use "../abstracts" as *;
+
+// @each-ээр utility класс үүсгэх
+@each $name, $value in $colors-light {
+  .u-text-#{$name} {
+    color: var(--#{$name}) !important;
+  }
+  .u-bg-#{$name} {
+    background-color: var(--#{$name}) !important;
+  }
+}
+
+@each $name, $value in $radii {
+  .u-radius-#{$name} {
+    border-radius: var(--radius-#{$name}) !important;
+  }
+}
+
+@each $step, $value in $spacings {
+  .u-mt-#{$step} {
+    margin-top: $value !important;
+  }
+  .u-mb-#{$step} {
+    margin-bottom: $value !important;
+  }
+}

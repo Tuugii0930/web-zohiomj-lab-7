@@ -1,0 +1,43 @@
+// Design token-ууд (map хэлбэрээр)
+$colors-light: (
+  bg: #f6f7fb,
+  surface: #ffffff,
+  text: #1c2030,
+  muted: #5b6275,
+  accent: #3b5bdb,
+);
+$colors-dark: (
+  bg: #12141c,
+  surface: #1c2030,
+  text: #eceef5,
+  muted: #9aa1b5,
+  accent: #91a7ff,
+);
+$colors-shared: (
+  focus: #f08c00,
+);
+$radii: (
+  md: 12px,
+  sm: 8px,
+);
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+$durations: (
+  base: 300ms,
+  enter: 600ms,
+  flip: 700ms,
+  slow: 500ms,
+);
+$spacings: (
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+);
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+$gap: 1rem;

@@ -1,0 +1,14 @@
+// Лаб 7 — үндсэн SCSS файл
+@use "base/root";
+@use "base/base";
+@use "base/animations";
+
+@use "components/layout";
+@use "components/button";
+@use "components/gallery";
+@use "components/flip-card";
+@use "components/dots";
+@use "components/media";
+
+@use "utilities/utilities";
+@use "base/reduced-motion";

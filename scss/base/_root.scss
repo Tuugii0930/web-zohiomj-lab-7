@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+:root {
+  @include emit-vars($colors-light);
+  @include emit-vars($colors-shared);
+  @include emit-vars($radii, "radius-");
+  --gap: #{$gap};
+  --dur: #{dur(base)};
+  --ease: #{$ease};
+  color-scheme: light;
+}
+
+@include dark-theme {
+  @include emit-vars($colors-dark);
+  color-scheme: dark;
+}

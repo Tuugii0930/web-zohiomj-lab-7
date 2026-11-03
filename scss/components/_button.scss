@@ -1,0 +1,14 @@
+.btn {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid var(--accent);
+  background: var(--surface);
+  color: var(--text);
+  transition: transform var(--dur) var(--ease), background var(--dur);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}

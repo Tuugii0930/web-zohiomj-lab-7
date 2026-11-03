@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "tokens" as t;
+@use "functions" as f;
+
+// min-width breakpoint
+@mixin respond($bp) {
+  $width: map.get(t.$breakpoints, $bp);
+  @if $width == null {
+    @error "Тодорхойгүй breakpoint: #{$bp}";
+  }
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin flex-center($justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin container {
+  max-width: f.rem(960px);
+  margin: 0 auto;
+}
+
+// map -> custom property
+@mixin emit-vars($map, $prefix: "") {
+  @each $name, $value in $map {
+    --#{$prefix}#{$name}: #{$value};
+  }
+}
+
+// Dark горим: data-theme болон системийн тохиргоо
+@mixin dark-theme {
+  :root[data-theme="dark"] {
+    @content;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use "../abstracts" as *;
+
+$cap-base: #000;
+
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fill, minmax(rem(240px), 1fr));
+
+  // Жишээ: respond mixin (одоогийн харагдацыг өөрчлөхгүй)
+  @include respond(md) {
+    gap: var(--gap);
+  }
+
+  &__item {
+    animation: fade-in dur(enter) var(--ease) both;
+    animation-delay: calc(var(--i) * 100ms);
+  }
+}
+
+.photo-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+
+  &__img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform dur(slow) var(--ease);
+  }
+
+  &__cap {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 0.6rem 1rem;
+    color: contrast($cap-base);
+    background: linear-gradient(transparent, rgb(0 0 0 / 0.75));
+    transform: translateY(100%);
+    transition: transform var(--dur) var(--ease);
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 24px rgb(0 0 0 / 0.3);
+  }
+  &:hover &__img,
+  &:focus-visible &__img {
+    transform: scale(1.1);
+  }
+  &:hover &__cap,
+  &:focus-visible &__cap {
+    transform: translateY(0);
+  }
+}

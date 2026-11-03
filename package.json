@@ -1,0 +1,12 @@
+{
+  "name": "lab7-sass",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sass --watch --style=expanded scss/main.scss css/style.css",
+    "build": "sass --no-source-map --style=compressed scss/main.scss css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.page {
+  @include container;
+}
+
+.site-header {
+  @include container;
+  @include flex-center(space-between);
+  padding: 1rem 0;
+}
